@@ -12,11 +12,16 @@ export default defineConfig({
   define: {
     global: 'globalThis',
   },
+  base: '/',                    // ← Quan trọng cho Vercel
   optimizeDeps: {
     esbuildOptions: {
       define: {
         global: 'globalThis',
       },
     },
+  },
+  build: {
+    outDir: 'dist',             // Vercel mặc định dùng dist
+    sourcemap: false,
   },
 })
